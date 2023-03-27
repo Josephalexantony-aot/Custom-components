@@ -1,0 +1,62 @@
+name: Request a Tenant in DEV environment
+description: Create a tenant request
+title: "[DEV-TENANT]: "
+labels: ["dev-tenant"]
+# assignees:
+#   - sumesh-aot
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reaching out to create a tenant request!
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: Which environment you would like to create this tenant ?
+      options:
+        - Openshift DEV
+        - App1 DEV
+    validations:
+      required: true
+
+  - type: input
+    id: business_name
+    attributes:
+      label: Business Name
+      description: Unique business name (limit to 50 characters)
+      placeholder: ex. My Business
+    validations:
+      required: true
+  - type: input
+    id: application_name
+    attributes:
+      label: Application Name
+      description: Application name which will be displayed to users as title (limit to 50 characters)
+      placeholder: ex. My Application Name
+    validations:
+      required: true
+  - type: input
+    id: tenant_key
+    attributes:
+      label: Tenant Key
+      description: Unique tenant key without <b>any spaces and in small characters</b> (limit to 10 characters)
+      placeholder: ex. demo
+    validations:
+      required: true
+  - type: textarea
+    id: business_purpose
+    attributes:
+      label: Description of your business
+      description: Please give a brief on your business
+      placeholder: Tell us what you are trying to achive with formsflow!
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: How can we contact you ?
+      description: Please give your email address
+      placeholder: demo@eample.com
+    validations:
+      required: true
